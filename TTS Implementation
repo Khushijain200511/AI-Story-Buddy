@@ -1,0 +1,11 @@
+FlutterTts flutterTts = FlutterTts();
+
+
+await flutterTts.setLanguage("en-IN");
+
+await flutterTts.setSpeechRate(0.45);
+
+
+await flutterTts.speak(
+"Once upon a time, a clever little robot named Pip lost his shiny blue gear in the Whispering Woods..."
+);
