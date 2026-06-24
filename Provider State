@@ -1,0 +1,52 @@
+enum AudioState{
+ idle,
+ loading,
+ playing,
+ finished,
+ error
+}
+
+
+class StoryProvider extends ChangeNotifier{
+
+AudioState state = AudioState.idle;
+
+bool showQuiz=false;
+
+bool success=false;
+
+
+Future<void> readStory() async{
+
+state=AudioState.loading;
+notifyListeners();
+
+
+try{
+
+state=AudioState.playing;
+notifyListeners();
+
+
+await flutterTts.speak(storyText);
+
+
+showQuiz=true;
+state=AudioState.finished;
+
+
+}
+
+catch(e){
+
+state=AudioState.error;
+
+}
+
+
+notifyListeners();
+
+}
+
+
+}
