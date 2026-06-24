@@ -1,0 +1,14 @@
+ListView.builder(
+ itemCount: quiz.options.length,
+ itemBuilder:(context,index){
+
+ return OptionButton(
+   text: quiz.options[index],
+   onTap:(){
+      checkAnswer(
+        quiz.options[index]
+      );
+   },
+ );
+
+});
