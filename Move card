@@ -1,0 +1,8 @@
+Transform.translate(
+offset: Offset(
+sin(animation.value*20),
+0
+),
+
+child: QuizCard()
+)
